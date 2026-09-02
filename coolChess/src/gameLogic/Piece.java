@@ -1,6 +1,5 @@
 package gameLogic;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Piece {
@@ -21,7 +20,7 @@ public abstract class Piece {
 		this.pieceColor = pieceColor;
 	}
 	
-	public abstract List<Tile> getValidMoves(Tile[][] board, int turn);
+	public abstract List<Tile> getValidMoves(ChessBoard board);
 	
 	public Type getType() {
 		return this.pieceType;
