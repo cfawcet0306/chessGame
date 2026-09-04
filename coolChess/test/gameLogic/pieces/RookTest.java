@@ -7,7 +7,6 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import gameLogic.ChessBoard;
-import gameLogic.ChessBoardLogic;
 import gameLogic.Piece;
 import gameLogic.Tile;
 
