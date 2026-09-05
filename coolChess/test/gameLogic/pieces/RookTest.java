@@ -68,7 +68,6 @@ class RookTest {
 		//Vertical moves
 		assertTrue(validMoves.contains(boardArray[2][3]));
 		assertTrue(validMoves.contains(boardArray[1][3]));
-		//assertTrue(validMoves.contains(boardArray[0][3]));
 		assertTrue(validMoves.contains(boardArray[4][3]));
 		assertTrue(validMoves.contains(boardArray[5][3]));
 		assertTrue(validMoves.contains(boardArray[6][3]));
@@ -82,6 +81,12 @@ class RookTest {
 		assertTrue(validMoves.contains(boardArray[3][6]));
 		assertTrue(validMoves.contains(boardArray[3][7]));
 		assertTrue(validMoves.contains(boardArray[3][0]));
+		
+		//Some things that shouldnt be allowed
+		assertFalse(validMoves.contains(boardArray[3][3]));
+		assertFalse(validMoves.contains(boardArray[2][4]));
+		assertFalse(validMoves.contains(boardArray[4][2]));
+		assertFalse(validMoves.contains(boardArray[0][3]));
 	}
 
 }
