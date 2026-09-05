@@ -30,10 +30,12 @@ public class Rook extends Piece {
 		if(board.getNorth(currentTile) == null) {
 			return;
 		}
-		if(board.getNorth(currentTile).getPiece() == null 
-				|| board.getNorth(currentTile).getPiece().getColor() != this.getColor()) {
+		if(board.getNorth(currentTile).getPiece() == null) {
 			validMoves.add(board.getNorth(currentTile));
 			this.getNorth(validMoves, board.getNorth(currentTile), board);
+		}
+		else if(board.getNorth(currentTile).getPiece().getColor() != this.getColor()) {
+			validMoves.add(board.getNorth(currentTile));
 		}
 	}
 	
@@ -41,10 +43,12 @@ public class Rook extends Piece {
 		if(board.getEast(currentTile) == null) {
 			return;
 		}
-		if(board.getEast(currentTile).getPiece() == null 
-				|| board.getEast(currentTile).getPiece().getColor() != this.getColor()) {
+		if(board.getEast(currentTile).getPiece() == null) {
 			validMoves.add(board.getEast(currentTile));
 			this.getEast(validMoves, board.getEast(currentTile), board);
+		}
+		else if(board.getEast(currentTile).getPiece().getColor() != this.getColor()) {
+			validMoves.add(board.getEast(currentTile));
 		}
 	}
 	
@@ -52,10 +56,12 @@ public class Rook extends Piece {
 		if(board.getSouth(currentTile) == null) {
 			return;
 		}
-		if(board.getSouth(currentTile).getPiece() == null 
-				|| board.getSouth(currentTile).getPiece().getColor() != this.getColor()) {
+		if(board.getSouth(currentTile).getPiece() == null) {
 			validMoves.add(board.getSouth(currentTile));
 			this.getSouth(validMoves, board.getSouth(currentTile), board);
+		}
+		else if(board.getSouth(currentTile).getPiece().getColor() != this.getColor()) {
+			validMoves.add(board.getSouth(currentTile));
 		}
 	}
 	
@@ -63,10 +69,12 @@ public class Rook extends Piece {
 		if(board.getWest(currentTile) == null) {
 			return;
 		}
-		if(board.getWest(currentTile).getPiece() == null 
-				|| board.getWest(currentTile).getPiece().getColor() != this.getColor()) {
+		if(board.getWest(currentTile).getPiece() == null) {
 			validMoves.add(board.getWest(currentTile));
 			this.getWest(validMoves, board.getWest(currentTile), board);
+		}
+		else if(board.getWest(currentTile).getPiece().getColor() != this.getColor()) {
+			validMoves.add(board.getWest(currentTile));
 		}
 	}
 	

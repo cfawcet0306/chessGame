@@ -51,5 +51,37 @@ class RookTest {
 		
 		
 	}
+	
+	
+	@Test
+	void testValidMovesOtherPieces() {
+		ChessBoard board = new ChessBoard();
+		
+		Tile[][] boardArray = board.getBoardArray();
+		
+		Piece rook1 = board.AddPiece(Piece.Type.ROOK, boardArray[3][3], Piece.Color.WHITE);
+		Piece rook2 = board.AddPiece(Piece.Type.ROOK, boardArray[1][3], Piece.Color.BLACK);
+		
+		List<Tile> validMoves = rook1.getValidMoves(board);
+		assertEquals(validMoves.size(), 13);
+		
+		//Vertical moves
+		assertTrue(validMoves.contains(boardArray[2][3]));
+		assertTrue(validMoves.contains(boardArray[1][3]));
+		//assertTrue(validMoves.contains(boardArray[0][3]));
+		assertTrue(validMoves.contains(boardArray[4][3]));
+		assertTrue(validMoves.contains(boardArray[5][3]));
+		assertTrue(validMoves.contains(boardArray[6][3]));
+		assertTrue(validMoves.contains(boardArray[7][3]));
+		
+		//Horizontal moves
+		assertTrue(validMoves.contains(boardArray[3][2]));
+		assertTrue(validMoves.contains(boardArray[3][1]));
+		assertTrue(validMoves.contains(boardArray[3][4]));
+		assertTrue(validMoves.contains(boardArray[3][5]));
+		assertTrue(validMoves.contains(boardArray[3][6]));
+		assertTrue(validMoves.contains(boardArray[3][7]));
+		assertTrue(validMoves.contains(boardArray[3][0]));
+	}
 
 }

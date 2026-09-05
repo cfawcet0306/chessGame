@@ -1,5 +1,6 @@
 package gameLogic;
 
+import gameLogic.pieces.PieceFactory;
 
 /**
  * Class to have ease of use when working with tiles
@@ -18,6 +19,19 @@ public class ChessBoard {
 				board[i][j] = new Tile(j, i);
 			}
 		}
+	}
+	
+	public Piece AddPiece(Piece.Type type, Tile position, Piece.Color color) {
+		if(position.getPiece() != null) {
+			return null;
+		}
+		
+		//Add code that calls the PieceFactory to make the proper piece
+		
+		Piece newPiece = PieceFactory.makePiece(type, position, color);
+		position.changePiece(newPiece);
+		
+		return newPiece;
 	}
 	
 	public Tile getNorth(Tile currentTile) {
